@@ -20,26 +20,26 @@ const AIAssistant = lazy(() =>
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sathyanantham V. — Senior Software & AI Engineer" },
+      { title: "Sathyanantham V. | Lead Software Engineer & Frontend Architect" },
       {
         name: "description",
         content:
-          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
+          "Portfolio of Sathyanantham V. - Lead Software Engineer and Frontend Architect with 13+ years of experience in React, TypeScript, micro-frontends, IBM Sterling OMS and applied AI.",
       },
-      { property: "og:title", content: "Sathyanantham V. — Senior Software & AI Engineer" },
+      { property: "og:title", content: "Sathyanantham V. | Lead Software Engineer & Frontend Architect" },
       {
         property: "og:description",
         content:
-          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
+          "Portfolio of Sathyanantham V. - Lead Software Engineer and Frontend Architect with 13+ years of experience in React, TypeScript, micro-frontends, IBM Sterling OMS and applied AI.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Sathyanantham V. — Senior Software & AI Engineer" },
+      { name: "twitter:title", content: "Sathyanantham V. | Lead Software Engineer & Frontend Architect" },
       {
         name: "twitter:description",
         content:
-          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
+          "Portfolio of Sathyanantham V. - Lead Software Engineer and Frontend Architect with 13+ years of experience in React, TypeScript, micro-frontends, IBM Sterling OMS and applied AI.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Sathyanantham V",
-          jobTitle: "Senior Software Engineer, AI Engineer",
+          jobTitle: "Lead Software Engineer, Frontend Architect",
           knowsAbout: [
             "React",
             "Next.js",

@@ -1,13 +1,5 @@
+import { PROFILE } from "@/lib/portfolio-data";
+
 export function Footer() {
-  return (
-    <footer className="relative border-t border-white/5 py-10 mt-10">
-      <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-        <div>© {new Date().getFullYear()} Sathyanantham V. Crafted with care.</div>
-        <div className="flex items-center gap-2">
-          <span className="size-1.5 rounded-full bg-primary shadow-[0_0_8px] shadow-primary" />
-          Built as a production-ready portfolio scaffold.
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer className="relative border-t border-white/5 py-8"><div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground"><div>© {new Date().getFullYear()} Sathyanantham V.</div><div className="flex items-center gap-4"><a href={PROFILE.resumeUrl} download className="hover:text-foreground">Resume</a><a href={PROFILE.linkedIn} target="_blank" rel="noreferrer" className="hover:text-foreground">LinkedIn</a><a href={`mailto:${PROFILE.email}`} className="hover:text-foreground">Email</a></div></div></footer>;
 }

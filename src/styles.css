@@ -186,8 +186,12 @@ html {
   50% { transform: translate3d(0, -14px, 0); }
 }
 @keyframes aurora-shift {
-  0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.9; }
-  50% { transform: translate3d(2%, -2%, 0) scale(1.05); opacity: 1; }
+  0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.8; }
+  50% { transform: translate3d(1%, -1%, 0) scale(1.025); opacity: 1; }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
 }
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -202,7 +206,10 @@ html {
   animation: float-slow 8s ease-in-out infinite;
 }
 @utility animate-aurora {
-  animation: aurora-shift 14s ease-in-out infinite;
+  animation: aurora-shift 22s ease-in-out infinite;
+}
+@utility animate-hero-float {
+  animation: hero-float 8s ease-in-out infinite;
 }
 @utility animate-blink {
   animation: blink 1s step-end infinite;

@@ -11,7 +11,7 @@ export function Skills() {
   const current = SKILLS.find((s) => s.category === active)!;
 
   return (
-    <section id="skills" className="relative py-24 md:py-32 scroll-mt-24">
+    <section id="skills" className="relative py-16 md:py-20 scroll-mt-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader
           eyebrow="Skills"

@@ -12,11 +12,11 @@ const STORAGE = "sv-chat-history-v1";
 function answer(q: string): string {
   const hit = KB.find((k) => k.q.test(q));
   if (hit) return hit.a;
-  return `I answer from a small, curated knowledge base about **Sathyanantham V** — projects, skills, IBM Sterling OMS work, micro-frontends and AI experience.
+  return `I answer from a curated knowledge base about **Sathyanantham V** - experience, skills, IBM Sterling OMS work, micro-frontends and AI initiatives.
 
 Try one of the suggested prompts below, or ask about React, OMS, or the project case studies.
 
-> Live LLM/RAG integration (OpenAI · Gemini · Groq) becomes available once API keys and source documents are configured — see the project README.`;
+> This is a scoped portfolio assistant. Its answers are based on the verified information shown on this site.`;
 }
 
 export function AIAssistant() {
@@ -74,9 +74,6 @@ export function AIAssistant() {
         )}
       >
         {open ? <X className="size-5" /> : <MessageSquare className="size-5" />}
-        {!open && (
-          <span className="absolute -top-1 -right-1 size-3 rounded-full bg-primary animate-ping opacity-70" />
-        )}
       </button>
 
       {open && (
@@ -92,7 +89,7 @@ export function AIAssistant() {
             <div className="flex-1 min-w-0">
               <div className="font-medium text-sm">Ask about Sathyanantham</div>
               <div className="text-[11px] text-muted-foreground truncate">
-                Scoped demo · connect a provider for live RAG
+                Resume-informed portfolio assistant
               </div>
             </div>
             <button
@@ -106,7 +103,7 @@ export function AIAssistant() {
           <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
             {messages.length === 0 && (
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 text-sm text-muted-foreground">
-                Hi 👋 I answer from a small, curated knowledge base about Sathyanantham's work. Try a suggestion below.
+                Hi! I answer from a curated knowledge base about Sathyanantham's verified experience. Try a suggestion below.
               </div>
             )}
             {messages.map((m, i) => (
@@ -181,7 +178,7 @@ export function AIAssistant() {
                   send(input);
                 }
               }}
-              placeholder="Ask a question…"
+              placeholder="Ask a question..."
               className="flex-1 resize-none rounded-xl bg-black/30 border border-white/10 px-3 py-2 text-sm outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/25 max-h-32"
             />
             <button

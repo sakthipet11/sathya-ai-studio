@@ -2,15 +2,20 @@ export const PROFILE = {
   name: "Sathyanantham V",
   shortName: "Sathyanantham",
   roles: [
-    "Senior Software Engineer",
-    "AI Engineer",
-    "React Expert",
-    "IBM Sterling OMS Specialist",
+    "Lead Software Engineer",
+    "Frontend Architect",
+    "React & TypeScript Specialist",
+    "Generative AI Practitioner",
   ],
+  location: "Coimbatore, Tamil Nadu, India",
+  email: "v.sathyanantham@gmail.com",
+  linkedIn: "https://www.linkedin.com/in/sathyanantham-v-646b911b",
+  resumeUrl: "/sathyanantham-v-resume.pdf",
+  coverLetterUrl: "/sathyanantham-v-cover-letter.pdf",
   tagline:
-    "I build resilient omnichannel commerce, order-management, and AI-assisted platforms — from micro-frontend UIs to Sterling OMS extensions.",
-  location: "India",
-  summary: `Senior engineer working across the full product surface — React, Next.js and TypeScript on the front, Node.js, Java Spring Boot, Kafka, Redis and PostgreSQL on the back, and IBM Sterling OMS at the enterprise core. I design micro-frontend architectures, integrate AEM and Drupal, and build AI-assisted experiences that make complex workflows feel obvious. I've led and mentored engineering teams of 6+ people delivering omnichannel commerce and order-management platforms across Retail, Life Sciences and Food Service.`,
+    "13+ years designing enterprise UI platforms, digital commerce and order-management solutions - with React, TypeScript, micro-frontends and applied AI.",
+  summary:
+    "Lead Software Engineer and Frontend Architect with 13+ years of experience delivering enterprise-scale applications across Retail, Digital Commerce, Banking, Healthcare and Life Sciences. I specialize in React.js, TypeScript, scalable UI platforms and Micro Frontend Architecture, and currently lead a team of 8 engineers at Nextuple. My work combines frontend architecture with practical backend integration, IBM Sterling OMS customizations and AI-enabled engineering workflows.",
 } as const;
 
 export const SKILLS: {
@@ -20,257 +25,199 @@ export const SKILLS: {
   {
     category: "Frontend",
     items: [
-      { name: "React", level: "Core" },
-      { name: "Next.js", level: "Core" },
+      { name: "React.js", level: "Core" },
       { name: "TypeScript", level: "Core" },
-      { name: "Micro Frontends", level: "Core" },
-      { name: "Tailwind CSS", level: "Strong" },
+      { name: "JavaScript (ES6+)", level: "Core" },
+      { name: "Next.js", level: "Strong" },
+      { name: "Redux Toolkit", level: "Strong" },
+      { name: "HTML5 / CSS3 / SCSS", level: "Core" },
+    ],
+  },
+  {
+    category: "Architecture",
+    items: [
+      { name: "Micro Frontend Architecture", level: "Core" },
+      { name: "Module Federation", level: "Core" },
       { name: "Design Systems", level: "Strong" },
+      { name: "UI Extensibility Frameworks", level: "Strong" },
       { name: "Schema-Driven UI", level: "Strong" },
+      { name: "Performance Optimization", level: "Strong" },
+    ],
+  },
+  {
+    category: "Backend & Data",
+    items: [
+      { name: "Node.js / Express.js", level: "Strong" },
+      { name: "Java / Spring Boot", level: "Strong" },
+      { name: "Python", level: "Strong" },
+      { name: "REST APIs / Microservices", level: "Strong" },
+      { name: "Kafka / Redis", level: "Strong" },
+      { name: "PostgreSQL / MongoDB", level: "Strong" },
+    ],
+  },
+  {
+    category: "Enterprise & AI",
+    items: [
+      { name: "IBM Sterling OMS", level: "Strong" },
+      { name: "IBM Call Center", level: "Strong" },
+      { name: "Generative AI", level: "Strong" },
+      { name: "Claude Skills", level: "Strong" },
+      { name: "OpenAI APIs / Prompt Engineering", level: "Strong" },
+      { name: "AI Agents / MCP", level: "Working" },
+    ],
+  },
+  {
+    category: "Tools & Leadership",
+    items: [
+      { name: "Technical Leadership", level: "Core" },
+      { name: "Mentoring & Code Reviews", level: "Core" },
+      { name: "Git / Bitbucket / Jenkins", level: "Strong" },
+      { name: "Docker / Maven / SonarQube", level: "Strong" },
       { name: "AEM / Drupal", level: "Strong" },
-    ],
-  },
-  {
-    category: "Backend",
-    items: [
-      { name: "Node.js / Express", level: "Core" },
-      { name: "Java / Spring Boot", level: "Core" },
-      { name: "REST & GraphQL APIs", level: "Strong" },
-      { name: "Kafka", level: "Strong" },
-      { name: "Redis", level: "Strong" },
-      { name: "PostgreSQL", level: "Strong" },
-    ],
-  },
-  {
-    category: "IBM / OMS",
-    items: [
-      { name: "IBM Sterling OMS", level: "Core" },
-      { name: "Order Orchestration", level: "Core" },
-      { name: "Omnichannel Fulfilment", level: "Strong" },
-      { name: "Custom Agents & Extensions", level: "Strong" },
-    ],
-  },
-  {
-    category: "AI Engineering",
-    items: [
-      { name: "LLM App Design", level: "Strong" },
-      { name: "RAG Architectures", level: "Strong" },
-      { name: "Prompt & Tooling", level: "Strong" },
-      { name: "AI Assistants / Chat UX", level: "Strong" },
-    ],
-  },
-  {
-    category: "Cloud & DevOps",
-    items: [
-      { name: "Docker", level: "Strong" },
-      { name: "CI / CD Pipelines", level: "Strong" },
-      { name: "Cloud Deployments", level: "Working" },
-      { name: "Observability", level: "Working" },
-    ],
-  },
-  {
-    category: "Architecture & Leadership",
-    items: [
-      { name: "Micro-Frontend Architecture", level: "Core" },
-      { name: "Event-Driven Systems", level: "Strong" },
-      { name: "Mentoring 6+ Engineers", level: "Core" },
-      { name: "Cross-Team Delivery", level: "Strong" },
+      { name: "Agile Delivery", level: "Strong" },
     ],
   },
 ];
 
-export const TIMELINE: { title: string; body: string }[] = [
+export const EXPERIENCE = [
   {
-    title: "Engineering Leadership",
-    body: "Leading and mentoring a team of 6+ engineers — reviewing architecture, unblocking delivery, and setting front-end and platform standards across squads.",
+    role: "Lead Software Engineer",
+    company: "Nextuple Inc.",
+    period: "Aug 2023 - Present",
+    highlights: [
+      "Lead frontend architecture for enterprise order-management and commerce applications.",
+      "Mentor a team of 8 engineers, set standards, and lead architecture, design and code reviews.",
+      "Delivered reusable patterns across 15+ enterprise modules and applications.",
+      "Contributed to IBM AI chatbot integration, Sterling OMS customizations and Python-based AI services.",
+    ],
   },
   {
-    title: "Enterprise Order Management",
-    body: "Designing and extending IBM Sterling OMS implementations — orchestration flows, custom agents, and omnichannel fulfilment for Retail, Life Sciences and Food Service programmes.",
+    role: "Senior Software Engineer",
+    company: "Nextuple Inc.",
+    period: "Aug 2022 - Jul 2023",
+    highlights: [
+      "Built enterprise order-management applications spanning promise, inventory, picking, packing, staging and hub workflows.",
+      "Developed reusable React components and frontend frameworks with architects and product owners.",
+    ],
   },
   {
-    title: "Micro-Frontend Platforms",
-    body: "Building composable React / Next.js micro-frontend platforms with shared design systems, schema-driven UI, and independent team deploys.",
+    role: "Senior Associate",
+    company: "Cognizant Technology Solutions",
+    period: "Nov 2018 - Aug 2022",
+    highlights: [
+      "Developed React and Drupal applications for global banking, healthcare and life-sciences clients including Bayer and US Bank.",
+      "Delivered responsive websites, reusable UI components, code reviews and mentoring across distributed teams.",
+    ],
   },
   {
-    title: "AI-Assisted Experiences",
-    body: "Prototyping and shipping AI assistants for internal tooling, call-center workflows and documentation — RAG pipelines, tool-use, and grounded chat UX.",
+    role: "Lead Developer / Senior Software Engineer / Software Engineer",
+    company: "Skava Systems (Infosys)",
+    period: "Jul 2012 - Nov 2018",
+    highlights: [
+      "Led frontend delivery for large retail eCommerce platforms and mentored engineers through architecture reviews.",
+      "Contributed to commerce experiences for Adidas, Reebok, Kohl's, Kraft Foods and Toys\"R\"Us.",
+    ],
   },
-  {
-    title: "Content & Digital Platforms",
-    body: "Integrating AEM and Drupal with modern JavaScript front-ends, and building Node.js / Spring Boot services backed by Kafka, Redis and PostgreSQL.",
-  },
-];
+] as const;
 
-export const PROJECTS: {
-  slug: string;
-  name: string;
-  tagline: string;
-  problem: string;
-  solution: string;
-  stack: string[];
-  category: "AI" | "Platform" | "OMS" | "Frontend";
-  featured?: boolean;
-}[] = [
+export const PROJECTS = [
   {
-    slug: "ibm-oms-ai-assistant",
-    name: "IBM OMS AI Assistant",
-    tagline: "Natural-language copilot over Sterling OMS orders & flows.",
-    problem:
-      "Support and ops teams spend hours navigating OMS screens to answer order-state questions and diagnose stuck flows.",
+    slug: "claude-skills",
+    name: "Claude Skills Initiative",
+    tagline: "Reusable AI-assisted engineering accelerators for frontend and backend teams.",
+    problem: "Common delivery activities were repetitive and inconsistent across teams.",
     solution:
-      "A retrieval-grounded assistant that queries OMS data, explains order state, and suggests next actions with citations back to the underlying documents and screens.",
-    stack: ["React", "Node.js", "IBM Sterling OMS", "RAG", "PostgreSQL"],
+      "Designed reusable Skills for UI schema generation, design documentation, code and unit-test generation, architecture guidance, API documentation and standards.",
+    stack: ["Claude", "Prompt Engineering", "React", "Node.js", "Python"],
     category: "AI",
     featured: true,
   },
   {
-    slug: "call-center-ai",
-    name: "Call Center AI",
-    tagline: "Agent-assist copilot for omnichannel support desks.",
-    problem:
-      "Agents juggle multiple systems on every call — customer, order, returns, promotions — with high cognitive load.",
+    slug: "ibm-ai-chatbot",
+    name: "IBM AI-Powered Chatbot",
+    tagline: "AI-enabled support for enterprise call center and order-management workflows.",
+    problem: "Enterprise operations need faster, more consistent assistance across complex customer and order workflows.",
     solution:
-      "A unified assist panel that summarises the customer, surfaces order context, and drafts responses using guardrailed LLM tooling.",
-    stack: ["Next.js", "TypeScript", "Node.js", "Kafka", "LLM Tooling"],
+      "Contributed to chatbot integration, frontend integrations, Python-based AI utilities and collaboration with AI and backend teams.",
+    stack: ["IBM AI", "IBM Call Center", "IBM Sterling OMS", "React", "Python"],
     category: "AI",
     featured: true,
   },
   {
-    slug: "schema-driven-ui",
-    name: "Schema-Driven UI",
-    tagline: "One JSON schema, many product surfaces.",
-    problem:
-      "Product teams re-implement the same forms and layouts across channels, drifting away from a shared design language.",
+    slug: "micro-frontends",
+    name: "Enterprise Micro Frontend Platform",
+    tagline: "Scalable frontend architecture across 15+ modules and applications.",
+    problem: "Large enterprise applications require independent, reusable frontend capabilities without sacrificing consistency.",
     solution:
-      "A schema-driven UI runtime that renders forms, tables and layouts from typed schemas — with validation, theming, and design-system alignment baked in.",
-    stack: ["React", "TypeScript", "Design System", "JSON Schema"],
-    category: "Frontend",
-  },
-  {
-    slug: "micro-frontend-platform",
-    name: "Micro Frontend Platform",
-    tagline: "Composable UI shell for independent product teams.",
-    problem:
-      "Multiple teams shipping into one storefront created release contention and inconsistent UX.",
-    solution:
-      "A micro-frontend shell with module federation, shared design tokens, isolated routing and progressive rollout — teams deploy independently, users see one product.",
-    stack: ["React", "Next.js", "Module Federation", "TypeScript"],
+      "Architected Micro Frontend solutions using Module Federation, reusable component libraries, extensibility frameworks and schema-driven UI patterns.",
+    stack: ["React", "TypeScript", "Module Federation", "Vite", "Design Systems"],
     category: "Platform",
     featured: true,
   },
   {
-    slug: "ai-docs-assistant",
-    name: "AI Documentation Assistant",
-    tagline: "Ask your internal docs, get grounded answers.",
-    problem:
-      "Onboarding and cross-team knowledge lives in scattered wikis, PDFs and code comments.",
+    slug: "sterling-oms",
+    name: "IBM Sterling OMS Customizations",
+    tagline: "Frontend integration and client-specific extension work for enterprise order management.",
+    problem: "Order-management implementations need tailored interfaces and integrations for each enterprise workflow.",
     solution:
-      "A RAG assistant over internal docs and code — with source citations, per-workspace scoping, and a chat UI tuned for engineers.",
-    stack: ["Next.js", "RAG", "Vector Store", "TypeScript"],
-    category: "AI",
+      "Contributed to Sterling OMS customizations and frontend integrations for clients including Tapestry, DICK'S Sporting Goods and Ashley Furniture.",
+    stack: ["IBM Sterling OMS", "React", "Node.js", "Spring Boot", "Kafka"],
+    category: "OMS",
   },
-  {
-    slug: "enterprise-chatbot",
-    name: "Enterprise Chatbot",
-    tagline: "Guardrailed conversational surface for enterprise workflows.",
-    problem:
-      "Enterprises want conversational entry points but need auditability, access control and predictable tool behaviour.",
-    solution:
-      "A pluggable chatbot with role-aware tools, structured outputs, streaming responses and full request logging for compliance.",
-    stack: ["Node.js", "TypeScript", "LLM Providers", "Redis"],
-    category: "AI",
-  },
-];
+] as const;
 
-// Scoped, factual knowledge base for the on-page AI assistant.
-// The assistant answers ONLY from these snippets.
+export const CERTIFICATIONS = [
+  "Introduction to Agent Skills - Claude",
+  "React Testing Library with Jest / Vitest",
+  "Principles of Secure Coding",
+  "Docker for the Absolute Beginner",
+  "Azure Serverless - Hands-on Learning",
+  "Generative AI",
+] as const;
+
+export const AWARDS = [
+  "Top Performer Award 2023 - Nextuple",
+  "Monthly Spot Award - Nextuple",
+  "Best Performer Award 2019, 2020 - Cognizant",
+  "Skava Star Performer Award 2013, 2015 - Skava Systems",
+] as const;
+
 export const KB: { q: RegExp; a: string }[] = [
   {
     q: /(who|about|tell).*(sathya|you)|about (him|sathya)/i,
-    a: `**Sathyanantham V** is a Senior Software Engineer and AI Engineer.
-
-He works across React, Next.js and TypeScript on the front, Node.js, Java Spring Boot, Kafka, Redis and PostgreSQL on the back, and **IBM Sterling OMS** at the enterprise core. He designs micro-frontend architectures, integrates AEM and Drupal, and builds AI-assisted experiences.
-
-He has led and mentored teams of **6+ engineers** delivering omnichannel commerce and order-management platforms across Retail, Life Sciences and Food Service.`,
+    a: "**Sathyanantham V** is a Lead Software Engineer and Frontend Architect with **13+ years** of experience. He currently leads a team of **8 engineers** at Nextuple, specializing in React.js, TypeScript, micro-frontends, enterprise UI platforms and applied AI.",
   },
   {
     q: /react|frontend|front[- ]?end/i,
-    a: `On the frontend Sathyanantham works with:
-
-- **React**, **Next.js**, **TypeScript**
-- **Micro-frontend** architectures with shared design systems
-- **Schema-driven UI** runtimes
-- **Tailwind CSS** and modern design-system tooling
-- Integrations with **AEM** and **Drupal**
-
-Sample projects: *Schema-Driven UI*, *Micro Frontend Platform*.`,
+    a: "Sathyanantham specializes in **React.js**, **TypeScript**, JavaScript, Next.js, design systems and Micro Frontend Architecture. His enterprise frontend work spans digital commerce, order management, banking, healthcare and life sciences.",
   },
   {
     q: /(ibm|sterling|oms|order manage)/i,
-    a: `**IBM Sterling OMS** is a core specialism.
-
-Sathyanantham designs and extends Sterling OMS implementations — order orchestration flows, custom agents, and omnichannel fulfilment — across **Retail, Life Sciences and Food Service** programmes.
-
-See the *IBM OMS AI Assistant* case study for an example of pairing Sterling OMS with a retrieval-grounded copilot.`,
+    a: "He contributes to **IBM Sterling OMS** customizations and frontend integrations, including work for Tapestry, DICK'S Sporting Goods and Ashley Furniture. At Nextuple he has also delivered enterprise order-management apps across promise, inventory, picking, packing, staging and hub workflows.",
   },
   {
     q: /micro[- ]?frontend|architecture/i,
-    a: `The **Micro Frontend Platform** approach he uses:
-
-\`\`\`text
-[ Shell App ]
-   ├── design tokens + shared UI
-   ├── routing + auth
-   └── module federation
-         ├── team A remote (React)
-         ├── team B remote (Next.js)
-         └── team C remote (React)
-\`\`\`
-
-Independent teams deploy their own remotes; the shell composes them behind one product experience. Shared design tokens and a schema-driven UI layer keep everything visually and behaviourally consistent.`,
+    a: "Sathyanantham has architected **Micro Frontend** solutions using Module Federation, reusable component libraries, extensibility frameworks and schema-driven UI patterns across 15+ enterprise modules and applications.",
   },
   {
     q: /(years|experience|senior)/i,
-    a: `Sathyanantham is a **senior-level engineer** with hands-on experience across omnichannel commerce, order management and AI-assisted platforms, and has led teams of **6+ engineers**.
-
-Exact tenure and employer history are intentionally not listed on this site — verified details are available on request via the Contact section.`,
+    a: "Sathyanantham brings **13+ years** of software-engineering experience and currently leads a team of **8 engineers** at Nextuple.",
   },
   {
-    q: /project|show|portfolio|case/i,
-    a: `Featured solution concepts:
-
-1. **IBM OMS AI Assistant** — natural-language copilot over Sterling OMS.
-2. **Call Center AI** — agent-assist copilot for omnichannel desks.
-3. **Micro Frontend Platform** — composable UI shell.
-4. **Schema-Driven UI**, **AI Documentation Assistant**, **Enterprise Chatbot**.
-
-Open the **Projects** section for the challenge / solution / stack for each.`,
-  },
-  {
-    q: /(ai|llm|rag|assistant|gpt|gemini|groq)/i,
-    a: `On the AI side, Sathyanantham focuses on:
-
-- **LLM application design** with structured outputs and tool use
-- **RAG** pipelines over internal documents and enterprise data
-- Grounded **chat UX** — citations, streaming, guardrails
-- Provider-agnostic wiring (**OpenAI / Gemini / Groq**) behind a common interface
-
-This portfolio's assistant is a *scoped* demo answering from an embedded knowledge base. Live LLM/RAG integration is enabled once API keys and source documents are configured — see the README.`,
+    q: /(ai|llm|rag|assistant|gpt|gemini|groq|claude)/i,
+    a: "His applied AI work includes contributing to an **IBM AI-powered chatbot** for enterprise call center and order-management applications, Python-based integration utilities, and reusable **Claude Skills**. The Skills initiative reduced common engineering work from approximately **20 days to 5 days**.",
   },
   {
     q: /contact|hire|email|reach/i,
-    a: `Contact details (email, LinkedIn, GitHub) are shared **on request** via the Contact form on this site.
-
-Head to the **Contact** section, drop a short message, and Sathyanantham will follow up.`,
+    a: "You can reach Sathyanantham at [v.sathyanantham@gmail.com](mailto:v.sathyanantham@gmail.com) or on [LinkedIn](https://www.linkedin.com/in/sathyanantham-v-646b911b).",
   },
 ];
 
 export const SUGGESTED_PROMPTS = [
   "Tell me about Sathyanantham",
-  "Show React projects",
-  "Explain IBM Sterling OMS experience",
   "What frontend technologies do you know?",
+  "Explain IBM Sterling OMS experience",
   "Explain Micro Frontend architecture",
+  "What AI initiatives have you led?",
   "How many years of experience?",
 ];

@@ -1,138 +1,34 @@
-import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Download, FileText, Mail, Sparkles } from "lucide-react";
 import { PROFILE } from "@/lib/portfolio-data";
-import { toast } from "sonner";
-import { cn } from "@/lib/utils";
-
-function useTypewriter(words: readonly string[], speed = 65, pause = 1500) {
-  const [i, setI] = useState(0);
-  const [text, setText] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      setText(words[i]);
-      const t = setTimeout(() => setI((x) => (x + 1) % words.length), 2600);
-      return () => clearTimeout(t);
-    }
-    const current = words[i];
-    if (!deleting && text === current) {
-      const t = setTimeout(() => setDeleting(true), pause);
-      return () => clearTimeout(t);
-    }
-    if (deleting && text === "") {
-      setDeleting(false);
-      setI((x) => (x + 1) % words.length);
-      return;
-    }
-    const t = setTimeout(
-      () => {
-        setText((prev) =>
-          deleting ? current.slice(0, prev.length - 1) : current.slice(0, prev.length + 1),
-        );
-      },
-      deleting ? 32 : speed,
-    );
-    return () => clearTimeout(t);
-  }, [text, deleting, i, words, speed, pause]);
-
-  return text;
-}
-
-function MagneticButton({
-  children,
-  className,
-  ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { children: React.ReactNode }) {
-  const ref = useRef<HTMLButtonElement>(null);
-  return (
-    <button
-      ref={ref}
-      onMouseMove={(e) => {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        const b = ref.current!.getBoundingClientRect();
-        const x = e.clientX - b.left - b.width / 2;
-        const y = e.clientY - b.top - b.height / 2;
-        ref.current!.style.transform = `translate(${x * 0.15}px, ${y * 0.2}px)`;
-      }}
-      onMouseLeave={() => {
-        if (ref.current) ref.current.style.transform = "";
-      }}
-      className={cn("transition-transform duration-200", className)}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-}
 
 export function Hero() {
-  const role = useTypewriter(PROFILE.roles);
   return (
-    <section id="top" className="relative pt-32 pb-24 md:pt-40 md:pb-32">
+    <section id="top" className="relative pt-28 pb-16 md:pt-32 md:pb-20">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-muted-foreground animate-float-slow">
-            <Sparkles className="size-3 text-primary" />
-            Available for senior engineering & AI roles
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-muted-foreground">
+              <Sparkles className="size-3 text-primary" /> Available for senior engineering & AI roles
+            </div>
+            <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl"><span className="text-gradient">Sathyanantham V.</span></h1>
+            <div className="mt-5 font-mono text-base text-foreground/85 md:text-lg">Lead Software Engineer <span className="text-primary">/</span> Frontend Architect</div>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">{PROFILE.tagline}</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <button onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })} className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground btn-glow transition hover:-translate-y-0.5">View Projects <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" /></button>
+              <button onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium transition hover:bg-white/5"><Mail className="size-4" /> Contact</button>
+              <a href={PROFILE.resumeUrl} download className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-muted-foreground transition hover:border-primary/50 hover:text-foreground"><Download className="size-4" /> Download Resume</a>
+              <a href={PROFILE.coverLetterUrl} download className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground"><FileText className="size-4" /> Cover letter</a>
+            </div>
+            <div className="mt-10 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+              {["React & Next.js", "IBM Sterling OMS", "Micro Frontends", "Applied AI"].map((item) => <div key={item} className="glass rounded-xl px-3 py-2.5 text-xs text-muted-foreground">{item}</div>)}
+            </div>
           </div>
-
-          <h1 className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl font-semibold leading-[1.02] tracking-tight">
-            <span className="text-gradient">Sathyanantham V.</span>
-          </h1>
-
-          <div
-            className="mt-5 h-8 md:h-9 font-mono text-base md:text-lg text-muted-foreground"
-            aria-live="polite"
-          >
-            <span className="text-foreground/90">{role}</span>
-            <span className="ml-0.5 inline-block w-[2px] bg-primary align-middle animate-blink" style={{ height: "1em" }} />
-          </div>
-
-          <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed">
-            {PROFILE.tagline}
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <MagneticButton
-              onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground btn-glow"
-            >
-              View Projects
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </MagneticButton>
-
-            <MagneticButton
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium hover:bg-white/5"
-            >
-              <Mail className="size-4" /> Contact
-            </MagneticButton>
-
-            <MagneticButton
-              onClick={() =>
-                toast("Resume coming soon", {
-                  description:
-                    "Upload the PDF to /public/resume.pdf and this button will download it. See README > Assets checklist.",
-                })
-              }
-              aria-disabled="true"
-              className="inline-flex items-center gap-2 rounded-full border border-dashed border-white/15 px-5 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground"
-            >
-              <Download className="size-4" /> Download Resume
-              <span className="ml-1 rounded-full bg-white/5 px-1.5 py-0.5 text-[10px] uppercase tracking-wider">
-                pending
-              </span>
-            </MagneticButton>
-          </div>
-
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
-            {["React & Next.js", "IBM Sterling OMS", "Micro Frontends", "AI Assistants"].map((k) => (
-              <div key={k} className="glass rounded-xl px-3 py-2.5 text-xs text-muted-foreground">
-                {k}
-              </div>
-            ))}
+          <div className="relative mx-auto w-full max-w-sm">
+            <div aria-hidden className="absolute -inset-5 rounded-[2.5rem] bg-primary/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-card/70 p-2 shadow-2xl shadow-primary/10 animate-hero-float">
+              <img src="/generic-engineer-profile.png" alt="Abstract digital engineering profile visual" className="aspect-[4/5] w-full rounded-[1.55rem] object-cover" width={1024} height={1280} />
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-background/75 px-4 py-3 backdrop-blur-md"><div className="text-[10px] uppercase tracking-[0.18em] text-primary">Engineering profile</div><div className="mt-1 text-sm font-medium">Enterprise platforms, applied AI, and scalable delivery.</div></div>
+            </div>
           </div>
         </div>
       </div>

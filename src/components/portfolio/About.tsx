@@ -2,15 +2,15 @@ import { PROFILE } from "@/lib/portfolio-data";
 import { Users, Layers, Cpu, Building2 } from "lucide-react";
 
 const HIGHLIGHTS = [
-  { icon: Users, label: "Mentors 6+ engineers" },
-  { icon: Layers, label: "Micro-frontend architecture" },
-  { icon: Cpu, label: "AI-assisted platforms" },
-  { icon: Building2, label: "Retail · Life Sciences · Food Service" },
+  { icon: Users, label: "Leads a team of 8 engineers" },
+  { icon: Layers, label: "15+ enterprise modules" },
+  { icon: Cpu, label: "AI-enabled engineering workflows" },
+  { icon: Building2, label: "Retail, Banking & Life Sciences" },
 ];
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 scroll-mt-24">
+    <section id="about" className="relative py-16 md:py-20 scroll-mt-24">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="About" title="Engineer, mentor, systems thinker." />
 
@@ -18,10 +18,10 @@ export function About() {
           <div className="md:col-span-3 space-y-5 text-base md:text-lg leading-relaxed text-muted-foreground">
             <p>{PROFILE.summary}</p>
             <p>
-              I care about the seam between craft and system — the details of a component, and the
+              I care about the seam between craft and system - the details of a component, and the
               architecture that lets a hundred of them ship without friction. I gravitate toward
-              problems where product, platform and AI overlap: order flows, agent-assist tools,
-              schema-driven interfaces, and internal copilots.
+              problems where product, platform and AI overlap: order flows, AI-enabled support tools,
+              schema-driven interfaces, and developer productivity accelerators.
             </p>
           </div>
 
