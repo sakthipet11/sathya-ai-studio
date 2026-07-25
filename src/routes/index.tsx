@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "React · Next.js · TypeScript · Micro-Frontends · IBM Sterling OMS · AI Assistants. Portfolio, projects and case studies.",
+          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "React · Next.js · TypeScript · Micro-Frontends · IBM Sterling OMS · AI Assistants.",
+          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
