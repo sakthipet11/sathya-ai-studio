@@ -1,23 +1,14 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { MessageSquare, X, Send, Sparkles } from "lucide-react";
-import { KB, SUGGESTED_PROMPTS } from "@/lib/portfolio-data";
+import { SUGGESTED_PROMPTS } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
+import { askAssistant } from "@/lib/assistant-actions";
 
 const Markdown = lazy(() => import("./Markdown"));
 
 type Msg = { role: "user" | "assistant"; content: string; ts: number };
 
 const STORAGE = "sv-chat-history-v1";
-
-function answer(q: string): string {
-  const hit = KB.find((k) => k.q.test(q));
-  if (hit) return hit.a;
-  return `I answer from a curated knowledge base about **Sathyanantham V** - experience, skills, IBM Sterling OMS work, micro-frontends and AI initiatives.
-
-Try one of the suggested prompts below, or ask about React, OMS, or the project case studies.
-
-> This is a scoped portfolio assistant. Its answers are based on the verified information shown on this site.`;
-}
 
 export function AIAssistant() {
   const [open, setOpen] = useState(false);
@@ -35,6 +26,7 @@ export function AIAssistant() {
       /* ignore */
     }
   }, []);
+
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE, JSON.stringify(messages.slice(-40)));
@@ -48,17 +40,38 @@ export function AIAssistant() {
     if (open) setTimeout(() => inputRef.current?.focus(), 50);
   }, [open]);
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     const q = text.trim();
     if (!q) return;
     const now = Date.now();
-    setMessages((m) => [...m, { role: "user", content: q, ts: now }]);
+    const newMessages: Msg[] = [...messages, { role: "user", content: q, ts: now }];
+    setMessages(newMessages);
     setInput("");
     setTyping(true);
-    setTimeout(() => {
-      setMessages((m) => [...m, { role: "assistant", content: answer(q), ts: Date.now() }]);
+
+    try {
+      const reply = await askAssistant({
+        data: {
+          history: newMessages.map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        },
+      });
+      setMessages((m) => [...m, { role: "assistant", content: reply, ts: Date.now() }]);
+    } catch (err) {
+      console.error("Error asking assistant:", err);
+      setMessages((m) => [
+        ...m,
+        {
+          role: "assistant",
+          content: "Sorry, I had trouble reaching the assistant. Please try again.",
+          ts: Date.now(),
+        },
+      ]);
+    } finally {
       setTyping(false);
-    }, 550);
+    }
   };
 
   return (
@@ -74,6 +87,9 @@ export function AIAssistant() {
         )}
       >
         {open ? <X className="size-5" /> : <MessageSquare className="size-5" />}
+        {!open && (
+          <span className="absolute -top-1 -right-1 size-3 rounded-full bg-primary animate-ping opacity-70" />
+        )}
       </button>
 
       {open && (
