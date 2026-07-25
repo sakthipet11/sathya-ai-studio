@@ -43,7 +43,7 @@
 
   --color-aurora-cyan: oklch(0.82 0.14 220);
   --color-aurora-blue: oklch(0.62 0.19 258);
-  --color-aurora-purple: oklch(0.62 0.20 300);
+  --color-aurora-purple: oklch(0.62 0.2 300);
 }
 
 :root,
@@ -108,7 +108,11 @@ html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -146,9 +150,21 @@ html {
 
 @utility aurora-bg {
   background:
-    radial-gradient(60% 45% at 15% 20%, color-mix(in oklab, var(--color-aurora-cyan) 22%, transparent) 0%, transparent 60%),
-    radial-gradient(50% 40% at 85% 10%, color-mix(in oklab, var(--color-aurora-purple) 18%, transparent) 0%, transparent 60%),
-    radial-gradient(55% 45% at 50% 100%, color-mix(in oklab, var(--color-aurora-blue) 20%, transparent) 0%, transparent 60%);
+    radial-gradient(
+      60% 45% at 15% 20%,
+      color-mix(in oklab, var(--color-aurora-cyan) 22%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 40% at 85% 10%,
+      color-mix(in oklab, var(--color-aurora-purple) 18%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      55% 45% at 50% 100%,
+      color-mix(in oklab, var(--color-aurora-blue) 20%, transparent) 0%,
+      transparent 60%
+    );
 }
 
 @utility grid-bg {
@@ -182,24 +198,51 @@ html {
 
 /* Keyframes */
 @keyframes float-slow {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -14px, 0); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
 }
 @keyframes aurora-shift {
-  0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.8; }
-  50% { transform: translate3d(1%, -1%, 0) scale(1.025); opacity: 1; }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(1%, -1%, 0) scale(1.025);
+    opacity: 1;
+  }
 }
 @keyframes hero-float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -8px, 0); }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
 }
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @utility animate-float-slow {
@@ -218,7 +261,9 @@ html {
 /* Card tilt hover surface */
 @utility tilt-card {
   transform-style: preserve-3d;
-  transition: transform 400ms cubic-bezier(.2,.8,.2,1), box-shadow 400ms;
+  transition:
+    transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 400ms;
   will-change: transform;
 }
 @utility tilt-card-hover {
@@ -229,4 +274,18 @@ html {
   }
 }
 
-/* Scroll progress bar hidden default */
+/* Soft Glowing utilities */
+@utility shadow-glow-primary {
+  box-shadow: 0 0 40px -5px color-mix(in oklab, var(--primary) 25%, transparent);
+}
+@utility shadow-glow-accent {
+  box-shadow: 0 0 40px -5px color-mix(in oklab, var(--accent) 25%, transparent);
+}
+
+/* Hide scrollbars but keep functionality */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

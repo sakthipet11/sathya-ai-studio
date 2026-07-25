@@ -1,5 +1,6 @@
 import { ArrowRight, Download, FileText, Mail, Sparkles } from "lucide-react";
 import { PROFILE } from "@/lib/portfolio-data";
+import { ThreeDProfile } from "./ThreeDProfile";
 
 export function Hero() {
   return (
@@ -8,26 +9,79 @@ export function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-              <Sparkles className="size-3 text-primary" /> Available for senior engineering & AI roles
+              <Sparkles className="size-3 text-primary" /> Available for senior engineering & AI
+              roles
             </div>
-            <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl"><span className="text-gradient">Sathyanantham V.</span></h1>
-            <div className="mt-5 font-mono text-base text-foreground/85 md:text-lg">Lead Software Engineer <span className="text-primary">/</span> Frontend Architect</div>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">{PROFILE.tagline}</p>
+            <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
+              <span className="text-gradient">Sathyanantham V.</span>
+            </h1>
+            <div className="mt-5 font-mono text-base text-foreground/85 md:text-lg">
+              Lead Software Engineer <span className="text-primary">/</span> Frontend Architect
+            </div>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">
+              {PROFILE.tagline}
+            </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-              <button onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })} className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground btn-glow transition hover:-translate-y-0.5">View Projects <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" /></button>
-              <button onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium transition hover:bg-white/5"><Mail className="size-4" /> Contact</button>
-              <a href={PROFILE.resumeUrl} download className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-muted-foreground transition hover:border-primary/50 hover:text-foreground"><Download className="size-4" /> Download Resume</a>
-              <a href={PROFILE.coverLetterUrl} download className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground"><FileText className="size-4" /> Cover letter</a>
+              <button
+                onClick={() =>
+                  document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground btn-glow transition hover:-translate-y-0.5"
+              >
+                View Projects{" "}
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </button>
+              <button
+                onClick={() =>
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium transition hover:bg-white/5"
+              >
+                <Mail className="size-4" /> Contact
+              </button>
+              <a
+                href={PROFILE.resumeUrl}
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-muted-foreground transition hover:border-primary/50 hover:text-foreground"
+              >
+                <Download className="size-4" /> Download Resume
+              </a>
+              <a
+                href={PROFILE.coverLetterUrl}
+                download
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground"
+              >
+                <FileText className="size-4" /> Cover letter
+              </a>
             </div>
             <div className="mt-10 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
-              {["React & Next.js", "IBM Sterling OMS", "Micro Frontends", "Applied AI"].map((item) => <div key={item} className="glass rounded-xl px-3 py-2.5 text-xs text-muted-foreground">{item}</div>)}
+              {["React & Next.js", "IBM Sterling OMS", "Micro Frontends", "Applied AI"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="glass rounded-xl px-3 py-2.5 text-xs text-muted-foreground"
+                  >
+                    {item}
+                  </div>
+                ),
+              )}
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-sm">
-            <div aria-hidden className="absolute -inset-5 rounded-[2.5rem] bg-primary/15 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-card/70 p-2 shadow-2xl shadow-primary/10 animate-hero-float">
-              <img src="/generic-engineer-profile.png" alt="Abstract digital engineering profile visual" className="aspect-[4/5] w-full rounded-[1.55rem] object-cover" width={1024} height={1280} />
-              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-background/75 px-4 py-3 backdrop-blur-md"><div className="text-[10px] uppercase tracking-[0.18em] text-primary">Engineering profile</div><div className="mt-1 text-sm font-medium">Enterprise platforms, applied AI, and scalable delivery.</div></div>
+            <div
+              aria-hidden
+              className="absolute -inset-5 rounded-[2.5rem] bg-primary/15 blur-3xl"
+            />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-card/70 shadow-2xl shadow-primary/10 animate-hero-float aspect-[4/5] w-full flex items-center justify-center p-2">
+              <ThreeDProfile />
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-background/75 px-4 py-3 backdrop-blur-md">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-primary">
+                  Neural Core
+                </div>
+                <div className="mt-1 text-sm font-medium">
+                  Interactive 3D network model of engineering systems.
+                </div>
+              </div>
             </div>
           </div>
         </div>

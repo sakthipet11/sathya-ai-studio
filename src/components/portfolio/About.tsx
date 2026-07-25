@@ -1,5 +1,6 @@
 import { PROFILE } from "@/lib/portfolio-data";
 import { Users, Layers, Cpu, Building2 } from "lucide-react";
+import { ScrollReveal } from "./ScrollReveal";
 
 const HIGHLIGHTS = [
   { icon: Users, label: "Leads a team of 8 engineers" },
@@ -12,28 +13,34 @@ export function About() {
   return (
     <section id="about" className="relative py-16 md:py-20 scroll-mt-24">
       <div className="mx-auto max-w-6xl px-4">
-        <SectionHeader eyebrow="About" title="Engineer, mentor, systems thinker." />
+        <ScrollReveal>
+          <SectionHeader eyebrow="About" title="Engineer, mentor, systems thinker." />
+        </ScrollReveal>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-5">
-          <div className="md:col-span-3 space-y-5 text-base md:text-lg leading-relaxed text-muted-foreground">
-            <p>{PROFILE.summary}</p>
-            <p>
-              I care about the seam between craft and system - the details of a component, and the
-              architecture that lets a hundred of them ship without friction. I gravitate toward
-              problems where product, platform and AI overlap: order flows, AI-enabled support tools,
-              schema-driven interfaces, and developer productivity accelerators.
-            </p>
-          </div>
+        <ScrollReveal delay={0.25}>
+          <div className="mt-12 grid gap-10 md:grid-cols-5">
+            <div className="md:col-span-3 space-y-5 text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p>{PROFILE.summary}</p>
+              <p>
+                I care about the seam between craft and system - the details of a component, and the
+                architecture that lets a hundred of them ship without friction. I gravitate toward
+                problems where product, platform and AI overlap: order flows, AI-enabled support
+                tools, schema-driven interfaces, and developer productivity accelerators.
+              </p>
+            </div>
 
-          <div className="md:col-span-2 grid grid-cols-2 gap-3">
-            {HIGHLIGHTS.map((h) => (
-              <div key={h.label} className="glass rounded-2xl p-4">
-                <h.icon className="size-4 text-primary" />
-                <div className="mt-3 text-sm text-foreground/90">{h.label}</div>
-              </div>
-            ))}
+            <div className="md:col-span-2 grid grid-cols-2 gap-3">
+              {HIGHLIGHTS.map((h, i) => (
+                <ScrollReveal key={h.label} delay={0.35 + i * 0.08} direction="up" distance={15}>
+                  <div className="glass rounded-2xl p-4 h-full">
+                    <h.icon className="size-4 text-primary" />
+                    <div className="mt-3 text-sm text-foreground/90">{h.label}</div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

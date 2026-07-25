@@ -13,10 +13,7 @@ export function ScrollProgress() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <div
-      aria-hidden
-      className="fixed left-0 top-0 z-[60] h-[2px] w-full bg-transparent"
-    >
+    <div aria-hidden className="fixed left-0 top-0 z-[60] h-[2px] w-full bg-transparent">
       <div
         className="h-full bg-gradient-to-r from-primary via-accent to-primary transition-[width] duration-150"
         style={{ width: `${progress}%` }}

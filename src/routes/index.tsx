@@ -26,7 +26,10 @@ export const Route = createFileRoute("/")({
         content:
           "Portfolio of Sathyanantham V. - Lead Software Engineer and Frontend Architect with 13+ years of experience in React, TypeScript, micro-frontends, IBM Sterling OMS and applied AI.",
       },
-      { property: "og:title", content: "Sathyanantham V. | Lead Software Engineer & Frontend Architect" },
+      {
+        property: "og:title",
+        content: "Sathyanantham V. | Lead Software Engineer & Frontend Architect",
+      },
       {
         property: "og:description",
         content:
@@ -35,7 +38,10 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Sathyanantham V. | Lead Software Engineer & Frontend Architect" },
+      {
+        name: "twitter:title",
+        content: "Sathyanantham V. | Lead Software Engineer & Frontend Architect",
+      },
       {
         name: "twitter:description",
         content:

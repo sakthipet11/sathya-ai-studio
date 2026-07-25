@@ -90,10 +90,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Sathyanantham V. — Senior Software & AI Engineer" },
       { name: "twitter:title", content: "Sathyanantham V. — Senior Software & AI Engineer" },
-      { property: "og:description", content: "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms." },
-      { name: "twitter:description", content: "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/81ee963d-276b-4142-ae7a-50c4d2a1b7a0/id-preview-bdc448ef--20a13271-8319-4d80-af20-1be161b12135.lovable.app-1784993446994.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/81ee963d-276b-4142-ae7a-50c4d2a1b7a0/id-preview-bdc448ef--20a13271-8319-4d80-af20-1be161b12135.lovable.app-1784993446994.png" },
+      {
+        property: "og:description",
+        content:
+          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Portfolio of Sathyanantham V. — Senior Software Engineer and AI Engineer specialising in React, Next.js, micro-frontends, IBM Sterling OMS and AI-assisted platforms.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/81ee963d-276b-4142-ae7a-50c4d2a1b7a0/id-preview-bdc448ef--20a13271-8319-4d80-af20-1be161b12135.lovable.app-1784993446994.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/81ee963d-276b-4142-ae7a-50c4d2a1b7a0/id-preview-bdc448ef--20a13271-8319-4d80-af20-1be161b12135.lovable.app-1784993446994.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

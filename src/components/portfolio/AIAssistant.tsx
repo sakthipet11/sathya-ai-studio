@@ -119,7 +119,8 @@ export function AIAssistant() {
           <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
             {messages.length === 0 && (
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 text-sm text-muted-foreground">
-                Hi! I answer from a curated knowledge base about Sathyanantham's verified experience. Try a suggestion below.
+                Hi! I answer from a curated knowledge base about Sathyanantham's verified
+                experience. Try a suggestion below.
               </div>
             )}
             {messages.map((m, i) => (

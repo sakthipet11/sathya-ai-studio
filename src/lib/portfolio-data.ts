@@ -115,7 +115,7 @@ export const EXPERIENCE = [
     period: "Jul 2012 - Nov 2018",
     highlights: [
       "Led frontend delivery for large retail eCommerce platforms and mentored engineers through architecture reviews.",
-      "Contributed to commerce experiences for Adidas, Reebok, Kohl's, Kraft Foods and Toys\"R\"Us.",
+      'Contributed to commerce experiences for Adidas, Reebok, Kohl\'s, Kraft Foods and Toys"R"Us.',
     ],
   },
 ] as const;
@@ -136,7 +136,8 @@ export const PROJECTS = [
     slug: "ibm-ai-chatbot",
     name: "IBM AI-Powered Chatbot",
     tagline: "AI-enabled support for enterprise call center and order-management workflows.",
-    problem: "Enterprise operations need faster, more consistent assistance across complex customer and order workflows.",
+    problem:
+      "Enterprise operations need faster, more consistent assistance across complex customer and order workflows.",
     solution:
       "Contributed to chatbot integration, frontend integrations, Python-based AI utilities and collaboration with AI and backend teams.",
     stack: ["IBM AI", "IBM Call Center", "IBM Sterling OMS", "React", "Python"],
@@ -147,7 +148,8 @@ export const PROJECTS = [
     slug: "micro-frontends",
     name: "Enterprise Micro Frontend Platform",
     tagline: "Scalable frontend architecture across 15+ modules and applications.",
-    problem: "Large enterprise applications require independent, reusable frontend capabilities without sacrificing consistency.",
+    problem:
+      "Large enterprise applications require independent, reusable frontend capabilities without sacrificing consistency.",
     solution:
       "Architected Micro Frontend solutions using Module Federation, reusable component libraries, extensibility frameworks and schema-driven UI patterns.",
     stack: ["React", "TypeScript", "Module Federation", "Vite", "Design Systems"],
@@ -157,8 +159,10 @@ export const PROJECTS = [
   {
     slug: "sterling-oms",
     name: "IBM Sterling OMS Customizations",
-    tagline: "Frontend integration and client-specific extension work for enterprise order management.",
-    problem: "Order-management implementations need tailored interfaces and integrations for each enterprise workflow.",
+    tagline:
+      "Frontend integration and client-specific extension work for enterprise order management.",
+    problem:
+      "Order-management implementations need tailored interfaces and integrations for each enterprise workflow.",
     solution:
       "Contributed to Sterling OMS customizations and frontend integrations for clients including Tapestry, DICK'S Sporting Goods and Ashley Furniture.",
     stack: ["IBM Sterling OMS", "React", "Node.js", "Spring Boot", "Kafka"],
