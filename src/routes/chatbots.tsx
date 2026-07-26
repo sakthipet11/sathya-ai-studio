@@ -334,7 +334,7 @@ function ChatbotStudio() {
             >
               {/* Initial message bubble */}
               <div className="flex justify-start">
-                <div className="max-w-[85%] rounded-2xl px-4 py-3 bg-white/[0.03] text-foreground rounded-bl-md border border-white/5 text-sm leading-relaxed">
+                <div className="max-w-[90%] break-words rounded-2xl px-4 py-3 bg-white/[0.03] text-foreground rounded-bl-md border border-white/5 text-sm leading-relaxed">
                   {activePersona.initialMessage}
                 </div>
               </div>
@@ -352,7 +352,7 @@ function ChatbotStudio() {
                   >
                     <div
                       className={cn(
-                        "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
+                        "max-w-[90%] min-w-0 break-words rounded-2xl px-4 py-3 text-sm leading-relaxed",
                         m.role === "user"
                           ? "bg-primary text-primary-foreground rounded-br-md font-medium"
                           : "bg-white/[0.04] text-foreground rounded-bl-md border border-white/5",
@@ -389,7 +389,7 @@ function ChatbotStudio() {
             </div>
 
             {/* Prompt Chips */}
-            <div className="px-5 pt-2 pb-1 bg-white/[0.01]">
+            <div className="px-4 sm:px-5 pt-2 pb-1 bg-white/[0.01]">
               <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
                 {activePersona.suggestions.map((p) => (
                   <button
@@ -409,7 +409,7 @@ function ChatbotStudio() {
                 e.preventDefault();
                 send(currentInput);
               }}
-              className="p-4 border-t border-white/10 bg-black/10 flex items-end gap-2"
+              className="p-3 sm:p-4 border-t border-white/10 bg-black/10 flex items-end gap-2 min-w-0"
             >
               <textarea
                 ref={inputRef}
@@ -424,8 +424,8 @@ function ChatbotStudio() {
                     send(currentInput);
                   }
                 }}
-                placeholder={`Ask the ${activePersona.name}...`}
-                className="flex-1 resize-none rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-sm outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 max-h-32 transition duration-200"
+                placeholder="Ask a question..."
+                className="min-w-0 flex-1 resize-none rounded-xl bg-black/40 border border-white/10 px-3.5 py-3 text-base sm:text-sm outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 max-h-32 transition duration-200"
               />
               <button
                 type="submit"
