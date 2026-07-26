@@ -43,7 +43,7 @@ export function Skills() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="right" delay={0.2}>
+          <ScrollReveal direction="right" delay={0.2} className="min-w-0">
             <div className="glass rounded-2xl p-6 md:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 {current.items.map((it, idx) => (
