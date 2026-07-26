@@ -4,7 +4,7 @@ import { ThreeDProfile } from "./ThreeDProfile";
 
 export function Hero() {
   return (
-    <section id="top" className="relative pt-28 pb-16 md:pt-32 md:pb-20">
+    <section id="top" className="relative pt-24 pb-12 md:pt-32 md:pb-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="text-center lg:text-left">
@@ -12,13 +12,13 @@ export function Hero() {
               <Sparkles className="size-3 text-primary" /> Available for senior engineering & AI
               roles
             </div>
-            <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
+            <h1 className="mt-5 font-display text-[2.25rem] font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="text-gradient">Sathyanantham V.</span>
             </h1>
-            <div className="mt-5 font-mono text-base text-foreground/85 md:text-lg">
+            <div className="mt-4 font-mono text-sm text-foreground/85 sm:text-base md:text-lg">
               Lead Software Engineer <span className="text-primary">/</span> Frontend Architect
             </div>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">
+            <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base md:text-lg lg:mx-0">
               {PROFILE.tagline}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -67,7 +67,7 @@ export function Hero() {
               )}
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-sm">
+          <div className="relative mx-auto w-full max-w-[17rem] sm:max-w-sm">
             <div
               aria-hidden
               className="absolute -inset-5 rounded-[2.5rem] bg-primary/15 blur-3xl"
