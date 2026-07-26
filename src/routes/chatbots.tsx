@@ -304,16 +304,16 @@ function ChatbotStudio() {
           </div>
 
           {/* Right panel: Active Chat Sandbox */}
-          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-h-[500px] lg:min-h-[550px]">
+          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-w-0 min-h-[460px] lg:min-h-[550px]">
             {/* Active Persona Header */}
-            <header className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-white/[0.01] backdrop-blur-md z-10">
-              <div className="flex items-center gap-3">
-                <div className="grid size-9 place-items-center rounded-xl bg-primary/10 text-primary">
+            <header className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 border-b border-white/10 bg-white/[0.01] backdrop-blur-md z-10">
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
                   <activePersona.icon className="size-4" />
                 </div>
-                <div>
-                  <div className="font-semibold text-sm">{activePersona.name}</div>
-                  <div className="text-[10px] text-muted-foreground uppercase font-mono tracking-wider">
+                <div className="min-w-0">
+                  <div className="truncate font-semibold text-sm">{activePersona.name}</div>
+                  <div className="truncate text-[10px] text-muted-foreground uppercase font-mono tracking-wider">
                     {activePersona.role}
                   </div>
                 </div>
@@ -321,16 +321,16 @@ function ChatbotStudio() {
               <button
                 onClick={() => clearChat(activePersona.id)}
                 disabled={currentHistory.length === 0}
-                className="text-[11px] text-muted-foreground hover:text-foreground disabled:opacity-40 transition"
+                className="shrink-0 text-[11px] text-muted-foreground hover:text-foreground disabled:opacity-40 transition"
               >
-                Clear History
+                Clear
               </button>
             </header>
 
             {/* Chat Messages Log */}
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto px-5 py-5 space-y-4 max-h-[350px] lg:max-h-[420px]"
+              className="flex-1 overflow-y-auto px-4 sm:px-5 py-5 space-y-4 max-h-[320px] sm:max-h-[350px] lg:max-h-[420px]"
             >
               {/* Initial message bubble */}
               <div className="flex justify-start">
