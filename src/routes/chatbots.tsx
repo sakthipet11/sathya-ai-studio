@@ -248,7 +248,7 @@ function ChatbotStudio() {
         </div>
 
         {/* Studio Grid */}
-        <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)] flex-1 lg:min-h-[550px] items-stretch min-w-0">
+        <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)] lg:flex-1 lg:min-h-[550px] items-start lg:items-stretch min-w-0">
           {/* Left panel: Persona Selector */}
           <div className="flex flex-col gap-3 min-w-0">
             <div className="text-xs uppercase tracking-wider text-muted-foreground font-mono px-1">
