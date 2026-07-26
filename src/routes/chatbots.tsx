@@ -254,7 +254,7 @@ function ChatbotStudio() {
             <div className="text-xs uppercase tracking-wider text-muted-foreground font-mono px-1">
               Select Specialist Agent
             </div>
-            <div className="flex flex-row overflow-x-auto lg:flex-col gap-3 pb-3 lg:pb-0 shrink-0">
+            <div className="flex flex-row overflow-x-auto scrollbar-none lg:flex-col gap-3 pb-3 lg:pb-0 shrink-0 -mx-4 px-4 lg:mx-0 lg:px-0">
               {PERSONAS.map((persona) => {
                 const isActive = activePersona.id === persona.id;
                 const Icon = persona.icon;
@@ -263,8 +263,8 @@ function ChatbotStudio() {
                     key={persona.id}
                     onClick={() => setActivePersona(persona)}
                     className={cn(
-                      "flex-1 lg:flex-initial text-left rounded-2xl p-4 transition-all duration-300",
-                      "border backdrop-blur-md relative overflow-hidden group shrink-0 min-w-[240px] lg:min-w-0",
+                      "lg:flex-initial text-left rounded-2xl p-4 transition-all duration-300",
+                      "border backdrop-blur-md relative overflow-hidden group shrink-0 w-[220px] sm:w-[260px] lg:w-auto",
                       isActive
                         ? "bg-white/[0.06] border-primary/50 shadow-lg " + persona.glowingColor
                         : "bg-white/[0.02] border-white/10 hover:border-white/20 hover:bg-white/[0.04]",
