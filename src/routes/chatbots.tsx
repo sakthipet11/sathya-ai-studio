@@ -228,7 +228,7 @@ function ChatbotStudio() {
       <ScrollProgress />
       <Nav />
 
-      <main className="flex-1 w-full max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col md:gap-8">
+      <main className="w-full max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col md:gap-8 lg:flex-1">
         {/* Header Breadcrumb */}
         <div className="flex flex-col gap-2 mb-6">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -304,7 +304,7 @@ function ChatbotStudio() {
           </div>
 
           {/* Right panel: Active Chat Sandbox */}
-          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-w-0 min-h-[460px] lg:min-h-[550px]">
+          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-w-0 lg:min-h-[550px]">
             {/* Active Persona Header */}
             <header className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 border-b border-white/10 bg-white/[0.01] backdrop-blur-md z-10">
               <div className="flex min-w-0 items-center gap-3">
