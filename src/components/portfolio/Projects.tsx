@@ -98,18 +98,22 @@ export function Projects() {
           />
         </ScrollReveal>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {PROJECTS.map((project, index) => (
-            <ScrollReveal
-              key={project.slug}
-              delay={0.15 + index * 0.1}
-              direction="up"
-              distance={30}
-              className={cn(project.featured && "md:col-span-2")}
-            >
-              <ProjectCard p={project} featured={project.featured} />
-            </ScrollReveal>
-          ))}
+          {PROJECTS.map((project, index) => {
+            const isFeatured = "featured" in project && Boolean(project.featured);
+            return (
+              <ScrollReveal
+                key={project.slug}
+                delay={0.15 + index * 0.1}
+                direction="up"
+                distance={30}
+                className={cn("min-w-0", isFeatured && "md:col-span-2")}
+              >
+                <ProjectCard p={project} featured={isFeatured} />
+              </ScrollReveal>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );

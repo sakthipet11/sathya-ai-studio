@@ -23,8 +23,9 @@ export function Skills() {
         </ScrollReveal>
 
         <div className="mt-10 grid gap-6 md:grid-cols-[240px_1fr]">
-          <ScrollReveal direction="left" delay={0.15}>
-            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0">
+          <ScrollReveal direction="left" delay={0.15} className="min-w-0">
+            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-none">
+
               {SKILLS.map((s) => (
                 <button
                   key={s.category}
@@ -42,7 +43,7 @@ export function Skills() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="right" delay={0.2}>
+          <ScrollReveal direction="right" delay={0.2} className="min-w-0">
             <div className="glass rounded-2xl p-6 md:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 {current.items.map((it, idx) => (

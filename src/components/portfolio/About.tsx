@@ -18,8 +18,8 @@ export function About() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.25}>
-          <div className="mt-12 grid gap-10 md:grid-cols-5">
-            <div className="md:col-span-3 space-y-5 text-base md:text-lg leading-relaxed text-muted-foreground">
+          <div className="mt-10 grid gap-8 md:grid-cols-5">
+            <div className="md:col-span-3 space-y-5 text-[0.95rem] sm:text-base md:text-lg leading-relaxed text-muted-foreground">
               <p>{PROFILE.summary}</p>
               <p>
                 I care about the seam between craft and system - the details of a component, and the
@@ -61,7 +61,7 @@ export function SectionHeader({
         <span className="size-1.5 rounded-full bg-primary shadow-[0_0_10px] shadow-primary" />
         {eyebrow}
       </div>
-      <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold tracking-tight text-gradient">
+      <h2 className="mt-4 font-display text-[1.75rem] sm:text-3xl md:text-4xl font-semibold tracking-tight text-gradient">
         {title}
       </h2>
       {description && <p className="mt-3 text-muted-foreground">{description}</p>}

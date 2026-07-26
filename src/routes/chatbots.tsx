@@ -228,7 +228,7 @@ function ChatbotStudio() {
       <ScrollProgress />
       <Nav />
 
-      <main className="flex-1 w-full max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col md:gap-8">
+      <main className="w-full max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col md:gap-8 lg:flex-1">
         {/* Header Breadcrumb */}
         <div className="flex flex-col gap-2 mb-6">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -248,13 +248,13 @@ function ChatbotStudio() {
         </div>
 
         {/* Studio Grid */}
-        <div className="grid gap-6 lg:grid-cols-[300px_1fr] flex-1 min-h-[550px] items-stretch">
+        <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)] lg:flex-1 lg:min-h-[550px] items-start lg:items-stretch min-w-0">
           {/* Left panel: Persona Selector */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 min-w-0">
             <div className="text-xs uppercase tracking-wider text-muted-foreground font-mono px-1">
               Select Specialist Agent
             </div>
-            <div className="flex flex-row overflow-x-auto lg:flex-col gap-3 pb-3 lg:pb-0 shrink-0">
+            <div className="flex flex-row overflow-x-auto scrollbar-none lg:flex-col gap-3 pb-3 lg:pb-0 shrink-0 -mx-4 px-4 lg:mx-0 lg:px-0">
               {PERSONAS.map((persona) => {
                 const isActive = activePersona.id === persona.id;
                 const Icon = persona.icon;
@@ -263,8 +263,8 @@ function ChatbotStudio() {
                     key={persona.id}
                     onClick={() => setActivePersona(persona)}
                     className={cn(
-                      "flex-1 lg:flex-initial text-left rounded-2xl p-4 transition-all duration-300",
-                      "border backdrop-blur-md relative overflow-hidden group shrink-0 min-w-[240px] lg:min-w-0",
+                      "lg:flex-initial text-left rounded-2xl p-4 transition-all duration-300",
+                      "border backdrop-blur-md relative overflow-hidden group shrink-0 w-[220px] sm:w-[260px] lg:w-auto",
                       isActive
                         ? "bg-white/[0.06] border-primary/50 shadow-lg " + persona.glowingColor
                         : "bg-white/[0.02] border-white/10 hover:border-white/20 hover:bg-white/[0.04]",
@@ -304,16 +304,16 @@ function ChatbotStudio() {
           </div>
 
           {/* Right panel: Active Chat Sandbox */}
-          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-h-[500px] lg:min-h-[550px]">
+          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-w-0 lg:min-h-[550px]">
             {/* Active Persona Header */}
-            <header className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-white/[0.01] backdrop-blur-md z-10">
-              <div className="flex items-center gap-3">
-                <div className="grid size-9 place-items-center rounded-xl bg-primary/10 text-primary">
+            <header className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 border-b border-white/10 bg-white/[0.01] backdrop-blur-md z-10">
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
                   <activePersona.icon className="size-4" />
                 </div>
-                <div>
-                  <div className="font-semibold text-sm">{activePersona.name}</div>
-                  <div className="text-[10px] text-muted-foreground uppercase font-mono tracking-wider">
+                <div className="min-w-0">
+                  <div className="truncate font-semibold text-sm">{activePersona.name}</div>
+                  <div className="truncate text-[10px] text-muted-foreground uppercase font-mono tracking-wider">
                     {activePersona.role}
                   </div>
                 </div>
@@ -321,20 +321,20 @@ function ChatbotStudio() {
               <button
                 onClick={() => clearChat(activePersona.id)}
                 disabled={currentHistory.length === 0}
-                className="text-[11px] text-muted-foreground hover:text-foreground disabled:opacity-40 transition"
+                className="shrink-0 text-[11px] text-muted-foreground hover:text-foreground disabled:opacity-40 transition"
               >
-                Clear History
+                Clear
               </button>
             </header>
 
             {/* Chat Messages Log */}
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto px-5 py-5 space-y-4 max-h-[350px] lg:max-h-[420px]"
+              className="flex-1 overflow-y-auto px-4 sm:px-5 py-5 space-y-4 max-h-[320px] sm:max-h-[350px] lg:max-h-[420px]"
             >
               {/* Initial message bubble */}
               <div className="flex justify-start">
-                <div className="max-w-[85%] rounded-2xl px-4 py-3 bg-white/[0.03] text-foreground rounded-bl-md border border-white/5 text-sm leading-relaxed">
+                <div className="max-w-[90%] break-words rounded-2xl px-4 py-3 bg-white/[0.03] text-foreground rounded-bl-md border border-white/5 text-sm leading-relaxed">
                   {activePersona.initialMessage}
                 </div>
               </div>
@@ -352,7 +352,7 @@ function ChatbotStudio() {
                   >
                     <div
                       className={cn(
-                        "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
+                        "max-w-[90%] min-w-0 break-words rounded-2xl px-4 py-3 text-sm leading-relaxed",
                         m.role === "user"
                           ? "bg-primary text-primary-foreground rounded-br-md font-medium"
                           : "bg-white/[0.04] text-foreground rounded-bl-md border border-white/5",
@@ -389,7 +389,7 @@ function ChatbotStudio() {
             </div>
 
             {/* Prompt Chips */}
-            <div className="px-5 pt-2 pb-1 bg-white/[0.01]">
+            <div className="px-4 sm:px-5 pt-2 pb-1 bg-white/[0.01]">
               <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
                 {activePersona.suggestions.map((p) => (
                   <button
@@ -409,7 +409,7 @@ function ChatbotStudio() {
                 e.preventDefault();
                 send(currentInput);
               }}
-              className="p-4 border-t border-white/10 bg-black/10 flex items-end gap-2"
+              className="p-3 sm:p-4 border-t border-white/10 bg-black/10 flex items-end gap-2 min-w-0"
             >
               <textarea
                 ref={inputRef}
@@ -424,8 +424,8 @@ function ChatbotStudio() {
                     send(currentInput);
                   }
                 }}
-                placeholder={`Ask the ${activePersona.name}...`}
-                className="flex-1 resize-none rounded-xl bg-black/40 border border-white/10 px-4 py-3 text-sm outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 max-h-32 transition duration-200"
+                placeholder="Ask a question..."
+                className="min-w-0 flex-1 resize-none rounded-xl bg-black/40 border border-white/10 px-3.5 py-3 text-base sm:text-sm outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 max-h-32 transition duration-200"
               />
               <button
                 type="submit"

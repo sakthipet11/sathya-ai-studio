@@ -78,18 +78,19 @@ export function Contact() {
                   <p className="mt-1 text-xs text-destructive">{errors.message}</p>
                 )}
               </div>
-              <div className="flex items-center justify-between pt-2">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <ShieldCheck className="size-3.5" /> Opens your email client - no form data is
-                  stored.
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <ShieldCheck className="mt-0.5 size-3.5 shrink-0" /> Opens your email client - no
+                  form data is stored.
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground btn-glow"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium whitespace-nowrap text-primary-foreground btn-glow sm:w-auto"
                 >
                   Email Sathyanantham <Send className="size-4" />
                 </button>
               </div>
+
             </form>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={0.25} className="lg:col-span-2 space-y-4">
