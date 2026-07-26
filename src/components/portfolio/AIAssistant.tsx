@@ -81,7 +81,7 @@ export function AIAssistant() {
         aria-label={open ? "Close AI assistant" : "Open AI assistant"}
         aria-expanded={open}
         className={cn(
-          "fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full transition-all",
+          "fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 grid size-12 place-items-center rounded-full transition-all sm:bottom-5 sm:right-5 sm:size-14",
           "bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-xl shadow-primary/30",
           "hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40",
         )}
@@ -96,7 +96,7 @@ export function AIAssistant() {
         <div
           role="dialog"
           aria-label="Portfolio AI assistant"
-          className="fixed bottom-24 right-5 z-50 w-[min(94vw,420px)] h-[min(75vh,620px)] flex flex-col rounded-3xl glass-strong shadow-2xl shadow-black/40 overflow-hidden"
+          className="fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+4.25rem)] z-50 flex h-[min(60dvh,500px)] max-h-[calc(100dvh-5.5rem)] flex-col overflow-hidden rounded-2xl glass-strong shadow-2xl shadow-black/40 sm:inset-x-auto sm:bottom-24 sm:right-5 sm:h-[min(75dvh,620px)] sm:max-h-none sm:w-[min(94vw,420px)] sm:rounded-3xl"
         >
           <header className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
             <span className="grid size-9 place-items-center rounded-xl bg-primary/15 text-primary">
@@ -116,7 +116,7 @@ export function AIAssistant() {
             </button>
           </header>
 
-          <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+          <div ref={scrollRef} className="min-h-0 flex-1 overscroll-contain overflow-y-auto px-4 py-4 space-y-4">
             {messages.length === 0 && (
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 text-sm text-muted-foreground">
                 Hi! I answer from a curated knowledge base about Sathyanantham's verified
@@ -163,7 +163,7 @@ export function AIAssistant() {
             )}
           </div>
 
-          <div className="px-3 pb-2">
+          <div className="shrink-0 px-3 pb-2">
             <div className="flex gap-1.5 overflow-x-auto pb-2">
               {SUGGESTED_PROMPTS.map((p) => (
                 <button
@@ -182,7 +182,7 @@ export function AIAssistant() {
               e.preventDefault();
               send(input);
             }}
-            className="p-3 border-t border-white/10 flex items-end gap-2"
+            className="shrink-0 border-t border-white/10 p-3 flex items-end gap-2"
           >
             <textarea
               ref={inputRef}

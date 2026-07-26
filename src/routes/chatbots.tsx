@@ -223,14 +223,14 @@ function ChatbotStudio() {
   const currentInput = inputs[activePersona.id];
 
   return (
-    <div className="relative min-h-screen text-foreground flex flex-col">
+    <div className="relative h-dvh overflow-hidden text-foreground flex flex-col lg:min-h-screen lg:h-auto lg:overflow-visible">
       <AuroraBackground />
       <ScrollProgress />
       <Nav />
 
-      <main className="w-full max-w-6xl mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col md:gap-8 lg:flex-1">
+      <main className="w-full max-w-6xl mx-auto min-h-0 flex-1 px-4 py-3 flex flex-col gap-3 lg:py-8 lg:gap-8 lg:flex-none">
         {/* Header Breadcrumb */}
-        <div className="flex flex-col gap-2 mb-6">
+        <div className="hidden sm:flex flex-col gap-2 mb-3 lg:mb-6">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <a href="/" className="hover:text-foreground transition flex items-center gap-1">
               <ArrowLeft className="size-3" /> Sathya's Portfolio
@@ -248,13 +248,13 @@ function ChatbotStudio() {
         </div>
 
         {/* Studio Grid */}
-        <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)] lg:flex-1 lg:min-h-[550px] items-start lg:items-stretch min-w-0">
+        <div className="flex min-h-0 flex-1 flex-col gap-3 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-6 lg:min-h-[550px] lg:flex-none lg:items-stretch">
           {/* Left panel: Persona Selector */}
-          <div className="flex flex-col gap-3 min-w-0">
-            <div className="text-xs uppercase tracking-wider text-muted-foreground font-mono px-1">
+          <div className="flex shrink-0 flex-col gap-2 min-w-0 lg:gap-3">
+            <div className="hidden lg:block text-xs uppercase tracking-wider text-muted-foreground font-mono px-1">
               Select Specialist Agent
             </div>
-            <div className="flex flex-row overflow-x-auto scrollbar-none lg:flex-col gap-3 pb-3 lg:pb-0 shrink-0 -mx-4 px-4 lg:mx-0 lg:px-0">
+            <div className="flex flex-row overflow-x-auto scrollbar-none lg:flex-col gap-2 pb-1 lg:gap-3 lg:pb-0 shrink-0 -mx-4 px-4 lg:mx-0 lg:px-0">
               {PERSONAS.map((persona) => {
                 const isActive = activePersona.id === persona.id;
                 const Icon = persona.icon;
@@ -263,8 +263,8 @@ function ChatbotStudio() {
                     key={persona.id}
                     onClick={() => setActivePersona(persona)}
                     className={cn(
-                      "lg:flex-initial text-left rounded-2xl p-4 transition-all duration-300",
-                      "border backdrop-blur-md relative overflow-hidden group shrink-0 w-[220px] sm:w-[260px] lg:w-auto",
+                      "lg:flex-initial text-left rounded-xl p-3 lg:rounded-2xl lg:p-4 transition-all duration-300",
+                      "border backdrop-blur-md relative overflow-hidden group shrink-0 w-[172px] sm:w-[220px] lg:w-auto",
                       isActive
                         ? "bg-white/[0.06] border-primary/50 shadow-lg " + persona.glowingColor
                         : "bg-white/[0.02] border-white/10 hover:border-white/20 hover:bg-white/[0.04]",
@@ -288,7 +288,7 @@ function ChatbotStudio() {
                         </div>
                       </div>
                     </div>
-                    <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                    <p className="hidden lg:block mt-2.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">
                       {persona.description}
                     </p>
                     {isActive && (
@@ -304,7 +304,7 @@ function ChatbotStudio() {
           </div>
 
           {/* Right panel: Active Chat Sandbox */}
-          <div className="glass rounded-3xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-w-0 lg:min-h-[550px]">
+          <div className="glass min-h-0 flex-1 rounded-2xl overflow-hidden flex flex-col border border-white/10 shadow-2xl relative min-w-0 lg:min-h-[550px] lg:rounded-3xl">
             {/* Active Persona Header */}
             <header className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5 border-b border-white/10 bg-white/[0.01] backdrop-blur-md z-10">
               <div className="flex min-w-0 items-center gap-3">
@@ -330,7 +330,7 @@ function ChatbotStudio() {
             {/* Chat Messages Log */}
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto px-4 sm:px-5 py-5 space-y-4 max-h-[320px] sm:max-h-[350px] lg:max-h-[420px]"
+              className="min-h-0 flex-1 overscroll-contain overflow-y-auto px-4 sm:px-5 py-4 sm:py-5 space-y-4 lg:max-h-[420px]"
             >
               {/* Initial message bubble */}
               <div className="flex justify-start">
@@ -389,7 +389,7 @@ function ChatbotStudio() {
             </div>
 
             {/* Prompt Chips */}
-            <div className="px-4 sm:px-5 pt-2 pb-1 bg-white/[0.01]">
+            <div className="shrink-0 px-4 sm:px-5 pt-2 pb-1 bg-white/[0.01]">
               <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
                 {activePersona.suggestions.map((p) => (
                   <button
@@ -409,7 +409,7 @@ function ChatbotStudio() {
                 e.preventDefault();
                 send(currentInput);
               }}
-              className="p-3 sm:p-4 border-t border-white/10 bg-black/10 flex items-end gap-2 min-w-0"
+              className="shrink-0 p-3 sm:p-4 border-t border-white/10 bg-black/10 flex items-end gap-2 min-w-0"
             >
               <textarea
                 ref={inputRef}
@@ -440,7 +440,7 @@ function ChatbotStudio() {
         </div>
       </main>
 
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
       <Toaster
         theme="dark"
         position="bottom-center"
