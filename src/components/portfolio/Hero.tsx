@@ -76,10 +76,10 @@ export function Hero() {
               <ThreeDProfile />
               <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-background/75 px-4 py-3 backdrop-blur-md">
                 <div className="text-[10px] uppercase tracking-[0.18em] text-primary">
-                  Neural Core
+                  Enterprise engineering
                 </div>
                 <div className="mt-1 text-sm font-medium">
-                  Interactive 3D network model of engineering systems.
+                  Scalable platforms, order management, and applied AI.
                 </div>
               </div>
             </div>
