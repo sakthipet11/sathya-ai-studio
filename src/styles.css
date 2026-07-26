@@ -289,3 +289,10 @@ html {
     display: none;
   }
 }
+
+/*Hide lovable badge*/
+@layer base {
+  #lovable-badge {
+    display: none !important;
+  }
+}
